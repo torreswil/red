@@ -6,7 +6,7 @@ class Concesionarios extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
-
+		$this->load->model('concesionarios_model');
 	}
 
 	// List all your items
@@ -21,13 +21,12 @@ class Concesionarios extends CI_Controller {
 		$this->load->library('form_validation', $config);
 		$this->data['custom_error'];
 
-		if ($this->form_validation->run()==false) {
+		if ($this->form_validation->run('concesionarios')==false) {
              $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">'.validation_errors().'</div>' : false);
 		}
 		else{
 
 			$data = array(
-						'id' => set_value('id'),
 						'nombre_concesionario'=> set_value('nombre_concesionario'),
 						'descripcion' => set_value('descripcion'),
 						'direccion' => set_value('direccion'),
@@ -40,22 +39,17 @@ class Concesionarios extends CI_Controller {
 						'link_cabecera' => set_value('link_cabecera'),
 						'link_logo' => set_value('link_logo'),
 			 );
+			if($this->concesionarios_model->guardar($data)==true){
+				redirect(base_url().'concesionarios');
+			}
+			else
+			{
+				$this->data['custom_error'] = '<div class="form_error"><p>A ocurrido un error.</p></div>';
+
+			}
 		}
 	}
 
-	//Update one item
-	/*			id	
-nombre_concesionario	
-descripcion	
-direccion	
-telefono1	
-telefono2	
-contacto	
-mail	
-id_municipios	
-id_departamentos	
-link_cabecera	
-link_logo */
 	public function update( $id = NULL )
 	{
 
