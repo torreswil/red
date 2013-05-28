@@ -6,7 +6,8 @@ class Concesionarios extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
-		$this->load->model('concesionarios_model');
+		$this->load->model('concesionarios_modelo');
+		$this->load->model('ubigeo');
 	}
 
 	// List all your items
@@ -18,8 +19,8 @@ class Concesionarios extends CI_Controller {
 	// Add a new item
 	public function add()
 	{
-		$this->load->library('form_validation', $config);
-		$this->data['custom_error'];
+		$this->load->library('form_validation');
+		$this->data['custom_error']='';
 
 		if ($this->form_validation->run('concesionarios')==false) {
              $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">'.validation_errors().'</div>' : false);
@@ -48,6 +49,10 @@ class Concesionarios extends CI_Controller {
 
 			}
 		}
+
+		$this->data['titulo']='Agregar un Concesionario';	
+		$this->data['dptos']=$this->ubigeo->devolver_departamentos();			   
+		$this->load->view('agregar_concesionario', $this->data); 
 	}
 
 	public function update( $id = NULL )
