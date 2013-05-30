@@ -20,6 +20,13 @@ class Concesionarios_modelo extends CI_Model {
 
 	}
 
+	function obtener_ultimo_id()
+	{
+		$query=$this->db->select_max('id')->get('concesionarios');
+		$fila=$query->row();
+		return $fila->id;	 
+	}
+
 }
 
 /* End of file concesionarios_modelo.php */

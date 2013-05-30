@@ -24,10 +24,11 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-114x114.png">
+		
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top">
+	<!--div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -42,21 +43,91 @@
 						<li><a href="#about">About</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-				</div><!--/.nav-collapse -->
+				</div>
 			</div>
 		</div>
-	</div>
+	</div-->
 
 	<div class="container">
-		<!-- Main hero unit for a primary marketing message or call to action -->
-		<div class="hero-unit">
-			<h1>Hello, Sergio!</h1>
-			<p>Este es el template para hacer las vistas.</p>
-			<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-		</div>
-		<!-- Example row of columns -->
-		
+		<div class="row">
+			<div class="span10 offset2"><h1>Registro de Nuevo Concesionario</h1></div>
+			<div class="span6 offset2">
+				<form action="<?php current_url() ?>" enctype="multipart/form-data">
+					<div class="control-group">
+	            		<label class="control-label" for="nombre_concesionario">Nombre Comercial<span class="required">*</span></label>                
+	                  	<div class="controls">
+	                        <input type="text" id='nombre_concesionario' name='nombre_concesionario'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('nombre_concesionario','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
 
+	            	<div class="control-group">
+	            		<label class="control-label" for="descripcion">Descripcion<span class="required">*</span></label>                
+	                  	<div class="controls">
+	                        <textarea id="descripcion" name="descripcion" rows="0" cols="0" class="required"></textarea>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('descripcion','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+                    <?php echo form_label('Departamento:') ?>
+					<?php echo form_dropdown('departamento',$dptos,set_value('departamento'),"id='sdep'"); ?>
+					<?php echo form_error('departamento','<div>','</div>'); ?>
+					
+					
+					<?php echo form_label('Municipio') ?>
+					<?php echo form_dropdown('municipio',array(), set_value('municipio'),"id='smun'"); ?>
+					<?php echo form_error('municipio','<div>','</div>'); ?>	
+									
+
+	            	<div class="control-group">
+	            		<label class="control-label" for="direccion">Direccion<span class="required">*</span></label>                   
+	                  	<div class="controls">
+	                        <input type="text" id='direccion' name='direccion'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('direccion','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+
+	            	<div class="control-group">
+	            		<label class="control-label" for="telefono1">Telefono1<span class="required">*</span></label>                
+	                  	<div class="controls">
+	                        <input type="text" id='telefono1' name='telefono1'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('telefono1','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+
+	            	<div class="control-group">
+	            		<label class="control-label" for="telefono2">Telefono2<span class="required">*</span></label>                  
+	                  	<div class="controls">
+	                        <input type="text" id='telefono2' name='telefono2'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('telefono2','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+	            	<div class="control-group">
+	            		<label class="control-label" for="contacto">Contacto<span class="required">*</span></label>                  
+	                  	<div class="controls">
+	                        <input type="text" id='contacto' name='contacto'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('contacto','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+
+	            	<div class="control-group">
+	            		<label class="control-label" for="mail">E-mail<span class="required">*</span></label>                  
+	                  	<div class="controls">
+	                        <input type="text" id='mail' name='mail'>
+	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
+	                        <p class="help-inline"><?php echo form_error('mail','<div>','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+
+
+				</form>
+			</div>
+		</div>
 	  	<hr>
 
 		<footer>
@@ -80,5 +151,21 @@
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-carousel.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
+
+	<script type="text/javascript">
+		var path = '<?php echo base_url()?>';
+		jQuery(document).ready(function(){
+			cargarmunicipios();
+			$('#sdep').change(cargarmunicipios);
+		});
+		
+		function cargarmunicipios () {
+			var cd = $('#sdep').val();
+
+			$.get(path + 'concesionarios/municipio', {'id' : cd}, function(resp) {
+				$('#smun').empty().html(resp);
+			});
+		}
+	</script>
 </body>
 </html>

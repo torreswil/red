@@ -28,6 +28,7 @@ class Concesionarios extends CI_Controller {
 		else{
 
 			$data = array(
+						//Estos son los campos del formulario
 						'nombre_concesionario'=> set_value('nombre_concesionario'),
 						'descripcion' => set_value('descripcion'),
 						'direccion' => set_value('direccion'),
@@ -37,10 +38,10 @@ class Concesionarios extends CI_Controller {
 						'mail' => set_value('mail'),
 						'id_municipios' => set_value('id_municipios'),
 						'id_departamentos' => set_value('id_departamentos'),
-						'link_cabecera' => set_value('link_cabecera'),
-						'link_logo' => set_value('link_logo'),
 			 );
 			if($this->concesionarios_model->guardar($data)==true){
+				$id_concesionario=$this->concesionarios_model->obtener_ultimo_id();
+
 				redirect(base_url().'concesionarios');
 			}
 			else
@@ -64,6 +65,13 @@ class Concesionarios extends CI_Controller {
 	public function delete( $id = NULL )
 	{
 
+	}
+
+	public function municipio()
+	{	
+		$coddep=$this->input->get('id');	
+		$this->ubigeo->devolver_municipios($coddep);
+		
 	}
 }
 
