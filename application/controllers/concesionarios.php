@@ -42,7 +42,6 @@ class Concesionarios extends CI_Controller {
 						'id_departamentos' => set_value('id_departamentos'),
 			 );
 			if($this->concesionarios_modelo->guardar($data)==true){
-				echo 'por aqui';
 				$id_concesionario=$this->concesionarios_model->obtener_ultimo_id();
 				redirect(base_url().'concesionarios');
 			}
@@ -75,7 +74,7 @@ class Concesionarios extends CI_Controller {
 		
 	}
 
-	function cargar_foto($foto)
+	function cargar_foto($id)
 	{
 		// configuración para upload
 		$config['upload_path'] = './imagenes/concesionarios/'; // la ruta desde la raíz de CI
@@ -90,11 +89,11 @@ class Concesionarios extends CI_Controller {
 		var_dump($_FILES);	
 		foreach ($_FILES['fotos']['tmp_name'] as $archivo=>$valor) {
 			
-			$_FILES['userfile']['name'] = $nombre.$_FILES['fotos']['name'][$archivo];
-		    $_FILES['userfile']['type'] = $_FILES['fotos']['type'][$archivo];
-		    $_FILES['userfile']['tmp_name'] = $_FILES['fotos']['tmp_name'][$archivo];
-		    $_FILES['userfile']['error'] = $_FILES['fotos']['error'][$archivo];
-		    $_FILES['userfile']['size'] = $_FILES['fotos']['size'][$archivo];
+			$_FILES['logo']['name'] = $id.$_FILES['fotos']['name'][$archivo];
+		    $_FILES['logo']['type'] = $_FILES['fotos']['type'][$archivo];
+		    $_FILES['logo']['tmp_name'] = $_FILES['fotos']['tmp_name'][$archivo];
+		    $_FILES['logo']['error'] = $_FILES['fotos']['error'][$archivo];
+		    $_FILES['logo']['size'] = $_FILES['fotos']['size'][$archivo];
 
 		    if (!$this->upload->do_upload())
               {echo $this->upload->display_errors();} // esto es muy útil para encontrar qué falla

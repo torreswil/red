@@ -34,9 +34,9 @@ CREATE TABLE IF NOT EXISTS `concesionarios` (
   PRIMARY KEY (`id`),
   KEY `id_municipios` (`id_municipios`),
   KEY `id_departamentos` (`id_departamentos`),
-  CONSTRAINT `concesionarios_ibfk_2` FOREIGN KEY (`id_departamentos`) REFERENCES `departamentos` (`id`),
-  CONSTRAINT `concesionarios_ibfk_1` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `concesionarios_ibfk_1` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `concesionarios_ibfk_2` FOREIGN KEY (`id_departamentos`) REFERENCES `departamentos` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla red_consecionarios.concesionarios: ~0 rows (aproximadamente)
 DELETE FROM `concesionarios`;
@@ -47,12 +47,12 @@ DELETE FROM `concesionarios`;
 -- Volcando estructura para tabla red_consecionarios.departamentos
 DROP TABLE IF EXISTS `departamentos`;
 CREATE TABLE IF NOT EXISTS `departamentos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL,
   `departamento` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla red_consecionarios.departamentos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla red_consecionarios.departamentos: ~32 rows (aproximadamente)
 DELETE FROM `departamentos`;
 /*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
 INSERT INTO `departamentos` (`id`, `departamento`) VALUES
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `municipios` (
   CONSTRAINT `municipios_ibfk_1` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla red_consecionarios.municipios: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla red_consecionarios.municipios: ~1.153 rows (aproximadamente)
 DELETE FROM `municipios`;
 /*!40000 ALTER TABLE `municipios` DISABLE KEYS */;
 INSERT INTO `municipios` (`id`, `nombre_municipio`, `departamento`) VALUES
@@ -1295,9 +1295,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   KEY `departamento` (`departamento`),
   KEY `municipio` (`municipio`),
   KEY `id_concesionarios` (`id_concesionarios`),
-  CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id_concesionarios`) REFERENCES `concesionarios` (`id`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`),
-  CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`municipio`) REFERENCES `municipios` (`id`)
+  CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`municipio`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id_concesionarios`) REFERENCES `concesionarios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='todos los usuarios del sistema';
 
 -- Volcando datos para la tabla red_consecionarios.usuarios: ~0 rows (aproximadamente)
@@ -1332,12 +1332,12 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   KEY `id_departamentos` (`id_departamentos`),
   KEY `id_municipios` (`id_municipios`),
   KEY `id_usuario_usuarios` (`id_usuario_usuarios`),
-  CONSTRAINT `vehiculos_ibfk_6` FOREIGN KEY (`id_usuario_usuarios`) REFERENCES `usuarios` (`id_usuario`),
   CONSTRAINT `vehiculos_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id`),
   CONSTRAINT `vehiculos_ibfk_2` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id`),
   CONSTRAINT `vehiculos_ibfk_3` FOREIGN KEY (`id_concesionarios`) REFERENCES `concesionarios` (`id`),
   CONSTRAINT `vehiculos_ibfk_4` FOREIGN KEY (`id_departamentos`) REFERENCES `departamentos` (`id`),
-  CONSTRAINT `vehiculos_ibfk_5` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`)
+  CONSTRAINT `vehiculos_ibfk_5` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `vehiculos_ibfk_6` FOREIGN KEY (`id_usuario_usuarios`) REFERENCES `usuarios` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla red_consecionarios.vehiculos: ~0 rows (aproximadamente)

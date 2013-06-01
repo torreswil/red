@@ -8,11 +8,11 @@
 	<meta name="author" content="">
 
 	<!-- Le styles -->
-	<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet"  href="<?php echo base_url()?>css/bootstrap.css"/>
 	<style type="text/css">
 		body { padding-top: 60px; padding-bottom: 40px; }
 	</style>
-	<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet"  href="<?php echo base_url()?>css/bootstrap-responsive.css" rel="stylesheet">
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -160,7 +160,7 @@
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url()?>js/jquery.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-modal.js"></script>
