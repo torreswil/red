@@ -1,6 +1,9 @@
 <?php 
 
-$config= array('concesionarios' => array(
+$config = array(
+
+
+            'concesionarios' => array(array(
                                 	'field'=>'nombre_concesionario',
                                 	'label'=>'Nombre del Concesionario',
                                 	'rules'=>'required|trim|xss_clean'
@@ -34,22 +37,7 @@ $config= array('concesionarios' => array(
                                 	'field'=>'mail',
                                 	'label'=>'E-mail',
                                 	'rules'=>'required|trim|xss_clean'
-                                ) 
-                                  );
-
-/*
-id	
-nombre_concesionario	
-descripcion	
-direccion	
-telefono1	
-telefono2	
-contacto	
-mail	
-id_municipios	
-id_departamentos	
-link_cabecera	
-link_logo
-*/
-	 ?>
+                                ) )
+                );
+?>
 
