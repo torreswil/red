@@ -26,6 +26,18 @@ class Concesionarios_modelo extends CI_Model {
 		return $fila->id;	 
 	}
 
+	function edit($data,$fieldID,$ID){
+        $this->db->where($fieldID,$ID);
+        $this->db->update('concesionarios', $data);
+
+        if ($this->db->affected_rows() >= 0)
+		{
+			return TRUE;
+		}
+		
+		return FALSE;       
+    }
+
 }
 
 /* End of file concesionarios_modelo.php */

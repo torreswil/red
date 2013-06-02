@@ -21,9 +21,11 @@ class Concesionarios extends CI_Controller {
 
 	// Add a new item
 	public function add()
-	{
+	{	
+
 		$this->load->library('form_validation');
 		$this->data['custom_error']='';
+		echo set_value('id_departamentos');
 
 		if ($this->form_validation->run('concesionarios')==false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">'.validation_errors().'</div>' : 'false');
@@ -38,11 +40,24 @@ class Concesionarios extends CI_Controller {
 						'telefono2' => set_value('telefono2'),
 						'contacto' => set_value('contacto'),
 						'mail' => set_value('mail'),
-						'id_municipios' => set_value('id_municipios'),
 						'id_departamentos' => set_value('id_departamentos'),
+						'id_municipios' => set_value('id_municipios'),
 			 );
+
 			if($this->concesionarios_modelo->guardar($data)==true){
-				$id_concesionario=$this->concesionarios_model->obtener_ultimo_id();
+				$id_concesionario=$this->concesionarios_modelo->obtener_ultimo_id();
+				$logo=($_FILES['logo']);
+				$encabezado=($_FILES['encabezado']);
+				$tipo='logo';
+				$link_logo = ($logo['name']!=='') ? $this->cargar_foto($logo,$id_concesionario,$tipo) : null ;//subo la imagen de encabezado a la carpeta concesionarios
+				$tipo='encabezado';
+				$link_cabecera = ($encabezado['name']!=='') ? $this->cargar_foto($encabezado,$id_concesionario,$tipo) : null;
+				$links = array(
+					'link_cabecera' => $link_cabecera,
+					'link_logo' => $link_logo );
+
+				$this->concesionarios_modelo->edit($links,'id',$id_concesionario);//actualizo los links de las
+
 				redirect(base_url().'concesionarios');
 			}
 			else
@@ -74,7 +89,7 @@ class Concesionarios extends CI_Controller {
 		
 	}
 
-	function cargar_foto($id)
+	function cargar_foto($imagen,$id,$tipo)
 	{
 		// configuración para upload
 		$config['upload_path'] = './imagenes/concesionarios/'; // la ruta desde la raíz de CI
@@ -85,20 +100,21 @@ class Concesionarios extends CI_Controller {
 		$nombre=set_value('nombre');
 		$this->load->library('upload', $config);  // NOTE: always load the library outside the loop
 		$this->upload->initialize($config); // según varios foros esta línea es importante no olvidarla
-		echo $nombre;
-		var_dump($_FILES);	
-		foreach ($_FILES['fotos']['tmp_name'] as $archivo=>$valor) {
-			
-			$_FILES['logo']['name'] = $id.$_FILES['fotos']['name'][$archivo];
-		    $_FILES['logo']['type'] = $_FILES['fotos']['type'][$archivo];
-		    $_FILES['logo']['tmp_name'] = $_FILES['fotos']['tmp_name'][$archivo];
-		    $_FILES['logo']['error'] = $_FILES['fotos']['error'][$archivo];
-		    $_FILES['logo']['size'] = $_FILES['fotos']['size'][$archivo];
+			$_FILES['userfile']['name'] = $tipo.'('.$id.')'.$imagen['name'];
+			$_FILES['userfile']['type'] = $imagen['type'];
+		    $_FILES['userfile']['tmp_name'] = $imagen['tmp_name'];
+		    $_FILES['userfile']['error'] = $imagen['error'];
+		    $_FILES['userfile']['size'] = $imagen['size'];
 
-		    if (!$this->upload->do_upload())
-              {echo $this->upload->display_errors();} // esto es muy útil para encontrar qué falla
+		if (!$this->upload->do_upload()){
+			echo $this->upload->display_errors();
+			return null;
 		}
+		else{
+			return base_url().'/imagenes/concesionarios/'.$_FILES['userfile']['name'];
+		} // esto es muy útil para encontrar qué falla
 	}
+
 }
 
 /* End of file concesionarios.php */

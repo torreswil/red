@@ -37,7 +37,21 @@ $config = array(
                                 	'field'=>'mail',
                                 	'label'=>'E-mail',
                                 	'rules'=>'required|trim|xss_clean'
-                                ) )
+                                ),
+
+                                array(
+                                    'field'=>'id_departamentos',
+                                    'label'=>'Departamento',
+                                    'rules'=>'required|trim|xss_clean'
+                                ),
+
+                                array(
+                                    'field'=>'id_municipios',
+                                    'label'=>'Municipio',
+                                    'rules'=>'required|trim|xss_clean'
+                                ),
+
+
+                                 )
                 );
 ?>
-

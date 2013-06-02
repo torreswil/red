@@ -73,13 +73,13 @@
 	                  	</div>
 	            	</div>
                     <?php echo form_label('Departamento:') ?>
-					<?php echo form_dropdown('departamento',$dptos,set_value('departamento'),"id='sdep'"); ?>
-					<?php echo form_error('departamento','<div>','</div>'); ?>
+					<?php echo form_dropdown('id_departamentos',$dptos,set_value('id_departamentos'),"id='sdep'"); ?>
+					<?php echo form_error('id_departamentos','<div>','</div>'); ?>
 					
 					
 					<?php echo form_label('Municipio') ?>
-					<?php echo form_dropdown('municipio',array(), set_value('municipio'),"id='smun'"); ?>
-					<?php echo form_error('municipio','<div>','</div>'); ?>	
+					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
+					<?php echo form_error('id_municipios','<div>','</div>'); ?>	
 									
 
 	            	<div class="control-group">
