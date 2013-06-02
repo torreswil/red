@@ -40,10 +40,10 @@ h1 {
 
 /*Estilos temporales*/
 
-.help-inline {
+.required {
 
-	background-color: #BF0A06!important;
-	color: white!important;
-	font-weight: 700;
-	font-style: italic;
+	color: #953b39;
+	font-family: "Source Sans Pro";
+	font-weight:900;
+	
 }

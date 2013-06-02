@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $titulo ?></title>
@@ -60,7 +60,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('nombre_concesionario','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('nombre_concesionario','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -69,7 +69,7 @@
 	                  	<div class="controls">
 	                        <textarea id="descripcion" value="<?php echo set_value('descripcion') ?>" name="descripcion" rows="0" cols="0" class="required"></textarea>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('descripcion','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('descripcion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
                     <?php echo form_label('Departamento:') ?>
@@ -87,7 +87,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('direccion','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('direccion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -96,7 +96,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='telefono1' name='telefono1' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('telefono1','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('telefono1','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -105,7 +105,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='telefono2' name='telefono2' value="<?php echo set_value('telefono2') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('telefono2','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('telefono2','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 	            	<div class="control-group">
@@ -113,7 +113,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='contacto' name='contacto' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('contacto','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('contacto','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -122,7 +122,7 @@
 	                  	<div class="controls">
 	                        <input type="text" id='mail' name='mail' value="<?php echo set_value('mail') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('mail','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('mail','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -130,7 +130,7 @@
 	            		<label class="control-label" for="logo">Logotipo<span class="required">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="file" name="logo" id="logo"><br>
-	                        <p class="help-inline"><?php echo form_error('logo','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('logo','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -139,7 +139,7 @@
 	                  	<div class="controls">
 	                        <input type="file" name="encabezado" id="encabezado" multiple=''><br>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
-	                        <p class="help-inline"><?php echo form_error('encabezado','<div>','</div>'); ?></p>
+	                        <p class="help-inline"><?php echo form_error('encabezado','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
