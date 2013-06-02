@@ -8,12 +8,42 @@
 
 /* Estilos generales y tipografía */
 
+
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic|Source+Sans+Pro:900);
+
+::selection {
+	background: #54C763; /*http://www.colourlovers.com/color/54C763/Dark_Mint*/
+	color: white;
+}
+
+::-moz-selection {
+	background: #54C763; 
+	color: white;
+}
 
 body {
 
 	font-family: "Roboto";
 	font-weight: 400;
-	color: #302E2F;
-	
+	color: #302E2F; /*http://www.colourlovers.com/palette/2881975/Cat_Eyess?sAC=1*/
+}
+
+h1 {
+
+	font-family: "Source Sans Pro";
+	font-weight: 900;
+	text-transform: uppercase;
+	color: #2A7DA9; /*http://www.colourlovers.com/palette/2881959/Muse_Palette_4?sAC=1*/
+
+}
+
+/*Estilos temporales*/
+
+.help-inline {
+
+	background-color: #BF0A06!important;
+	color: white!important;
+	font-weight: 700;
+	font-style: italic;
 }
