@@ -1,4 +1,19 @@
 /*
  * RED DE CONCESIONARIOS.COM 
  * Estilos basados en Bootstrap
+ * Creados por @sergiom23 & @wiltoco
+ * http://sergiom23.com
  */
+
+
+/* Estilos generales y tipografía */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700italic,700,400italic|Source+Sans+Pro:900);
+
+body {
+
+	font-family: "Roboto";
+	font-weight: 400;
+	color: #302E2F;
+	
+}

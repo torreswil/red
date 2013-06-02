@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $titulo ?></title>
@@ -7,19 +7,20 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<!-- Le styles -->
+	<!-- Le Estilos -->
 	<link rel="stylesheet"  href="<?php echo base_url()?>css/bootstrap.css"/>
+	<link rel="stylesheet"  href="<?php echo base_url()?>css/estilos.css"/>
 	<style type="text/css">
 		body { padding-top: 60px; padding-bottom: 40px; }
 	</style>
 	<link rel="stylesheet"  href="<?php echo base_url()?>css/bootstrap-responsive.css" rel="stylesheet">
 
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!-- Le HTML Shiv y los trucos para los codigos en HTML5 -->
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<!-- Le fav and touch icons -->
+	<!-- Le Favicon e iconos para dispositivos retina -->
 	<link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/images/apple-touch-icon-72x72.png">
@@ -159,7 +160,7 @@
 
 	<!-- Le javascript
 	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- Aqui van todos los  scripts en javascript para que corra más rapido la página -->
 	<script type="text/javascript" src="<?php echo base_url()?>js/jquery.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-transition.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-alert.js"></script>
