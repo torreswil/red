@@ -58,7 +58,7 @@ class Concesionarios extends CI_Controller {
 
 				$this->concesionarios_modelo->edit($links,'id',$id_concesionario);//actualizo los links de las
 
-				redirect(base_url().'concesionarios');
+				redirect(base_url().'concesionarios/ver/'.$id_concesionario);
 			}
 			else
 			{
@@ -89,18 +89,28 @@ class Concesionarios extends CI_Controller {
 		
 	}
 
+	public function ver()
+	{
+		$this->data['detalles_concesionario']=$this->concesionarios_modelo->ver_concesionario($this->uri->segment(3),NULL,NULL,true);
+		if($this->data['detalles_concesionario']){
+			$this->load->view('ver_concesionario',$this->data);
+		}
+		
+	}
+
 	function cargar_foto($imagen,$id,$tipo)
 	{
 		// configuración para upload
 		$config['upload_path'] = './imagenes/concesionarios/'; // la ruta desde la raíz de CI
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = '2048'; // 2 Mb
 		$config['max_width'] = '2048';
 		$config['max_height'] = '2048';
 		$nombre=set_value('nombre');
 		$this->load->library('upload', $config);  // NOTE: always load the library outside the loop
 		$this->upload->initialize($config); // según varios foros esta línea es importante no olvidarla
-			$_FILES['userfile']['name'] = $tipo.'('.$id.')'.$imagen['name'];
+			$type=str_replace('image/', ".", $imagen['type']);
+			$_FILES['userfile']['name'] = $tipo.'('.$id.')'.$type;
 			$_FILES['userfile']['type'] = $imagen['type'];
 		    $_FILES['userfile']['tmp_name'] = $imagen['tmp_name'];
 		    $_FILES['userfile']['error'] = $imagen['error'];

@@ -38,6 +38,14 @@ class Concesionarios_modelo extends CI_Model {
 		return FALSE;       
     }
 
+    public function ver_concesionario($id)
+    {
+    	$this->db->where('id',$id);
+    	$query=$this->db->get('concesionarios');
+    	$result=$query->row();
+		return $result;
+    }
+
 }
 
 /* End of file concesionarios_modelo.php */

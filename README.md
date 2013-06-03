@@ -1,4 +1,4 @@
 red
 ===
 
-Red de concesionario para Luis Torres
+Red de concesionarios, se pueden agregar varios conceionarios.

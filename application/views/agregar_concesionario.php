@@ -74,12 +74,12 @@
 	            	</div>
                     <?php echo form_label('Departamento:') ?>
 					<?php echo form_dropdown('id_departamentos',$dptos,set_value('id_departamentos'),"id='sdep'"); ?>
-					<?php echo form_error('id_departamentos','<div>','</div>'); ?>
+					<p class="help-inline"><?php echo form_error('id_departamentos','<div class="label label-important">','</div>'); ?></p>
 					
 					
 					<?php echo form_label('Municipio') ?>
 					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
-					<?php echo form_error('id_municipios','<div>','</div>'); ?>	
+					<p class="help-inline"><?php echo form_error('id_municipios','<div class="label label-important">','</div>'); ?></p>	
 									
 
 	            	<div class="control-group">
@@ -137,7 +137,7 @@
 	            	<div class="control-group">
 	            		<label class="control-label" for="encabezado">Encabezado<span class="required">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="file" name="encabezado" id="encabezado" multiple=''><br>
+	                        <input type="file" name="encabezado" id="encabezado"><br>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('encabezado','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
