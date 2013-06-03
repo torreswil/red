@@ -25,8 +25,6 @@ class Concesionarios extends CI_Controller {
 
 		$this->load->library('form_validation');
 		$this->data['custom_error']='';
-		echo set_value('id_departamentos');
-
 		if ($this->form_validation->run('concesionarios')==false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">'.validation_errors().'</div>' : 'false');
 		}
@@ -40,6 +38,7 @@ class Concesionarios extends CI_Controller {
 						'telefono2' => set_value('telefono2'),
 						'contacto' => set_value('contacto'),
 						'mail' => set_value('mail'),
+						'web' => set_value('web'),
 						'id_departamentos' => set_value('id_departamentos'),
 						'id_municipios' => set_value('id_municipios'),
 			 );

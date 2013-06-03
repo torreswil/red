@@ -67,7 +67,7 @@
 	            	<div class="control-group">
 	            		<label class="control-label" for="descripcion">Descripcion<span class="required">*</span></label>                
 	                  	<div class="controls">
-	                        <textarea id="descripcion" value="<?php echo set_value('descripcion') ?>" name="descripcion" rows="0" cols="0" class="required"></textarea>
+	                        <textarea id="descripcion"  name="descripcion" rows="0" cols="0" class="required"><?php echo set_value('descripcion') ?></textarea>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('descripcion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
@@ -121,8 +121,15 @@
 	            		<label class="control-label" for="mail">E-mail<span class="required">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="text" id='mail' name='mail' value="<?php echo set_value('mail') ?>">
-	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('mail','<div class="label label-important">','</div>'); ?></p>
+	                  	</div>
+	            	</div>
+
+	            	<div class="control-group">
+	            		<label class="control-label" for="web">Sitio Web<span class="required">*</span></label>                  
+	                  	<div class="controls">
+	                        <input type="text" id='web' name='web' value="<?php echo set_value('web') ?>">
+	                        <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
@@ -137,7 +144,7 @@
 	            	<div class="control-group">
 	            		<label class="control-label" for="encabezado">Encabezado<span class="required">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="file" name="encabezado" id="encabezado"><br>
+	                        <input type="file" name="encabezado" id="encabezado" <br>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('encabezado','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>

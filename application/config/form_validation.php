@@ -36,7 +36,7 @@ $config = array(
                                 array(
                                 	'field'=>'mail',
                                 	'label'=>'E-mail',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'required|trim||valid_email'
                                 ),
 
                                 array(
