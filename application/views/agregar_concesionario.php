@@ -147,13 +147,6 @@
 	                       </div>
 	                 </div>
 
-	            	<div class="control-group">
-	            		<label class="control-label" for="web">Sitio Web<span class="required">*</span></label>                  
-	                  	<div class="controls">
-	                        <input type="text" id='web' name='web' value="<?php echo set_value('web') ?>">
-	                        <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
-	                  	</div>
-	            	</div>
 
 	            	<div class="control-group">
 	            		<label class="control-label" for="logo">Logotipo<span class="required">*</span></label>                  
