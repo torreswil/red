@@ -29,25 +29,28 @@
 </head>
 <body>
 
-	<!--div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="#">Red Concesionarios</a>
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li class="active"><a href="#">Inicio</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div-->
+	<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar es usado para el formato responsive, cuando el boton se pone a la izquierda -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Nombre del Proyecto -->
+      <a class="brand" href="#"><img src="http://i.imgur.com/opUgXXM.png" title="Red de Concesionarias.com"/></a>
+ 
+      <!-- Aqui va lo que se oculta despues de los 940px-->
+      <div class="nav-collapse collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+ 
+    </div>
+  </div>
+</div>
 
 	<div class="container">
 		<p><?php $prueba ?></p>
