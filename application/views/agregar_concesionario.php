@@ -42,6 +42,16 @@
  
       <!-- Nombre del Proyecto -->
       <a class="brand" href="#"><img src="http://i.imgur.com/opUgXXM.png" title="Red de Concesionarias.com"/></a>
+
+      <ul class="nav">
+  <li><a href="#">Ver Concesionarios</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="#">Agregar un Concesionario</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="#">Agregar Auto</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="#">Busqueda</a></li>
+</ul>
  
       <!-- Aqui va lo que se oculta despues de los 940px-->
       <div class="nav-collapse collapse">
