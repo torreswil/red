@@ -28,6 +28,7 @@
 		
 </head>
 <body>
+	<!-- Aqui va todo el contenido que se quiera poner -->
 
 	<div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
