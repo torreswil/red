@@ -699,7 +699,7 @@ a.text-warning:focus {
 
 a.text-error:hover,
 a.text-error:focus {
-  color: #953b39;
+
 }
 
 .text-info {
@@ -1071,6 +1071,8 @@ textarea {
 label {
   display: block;
   margin-bottom: 5px;
+  font-weight: 700;
+  font-style: italic;
 }
 
 select,
@@ -5675,7 +5677,7 @@ a.badge:focus {
 
 .label-important[href],
 .badge-important[href] {
-  background-color: #953b39;
+
     font-weight: 400;
   font-style: italic;
 }
