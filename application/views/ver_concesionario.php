@@ -50,7 +50,6 @@
 		<!-- Main hero unit for a primary marketing message or call to action -->
 		<div class="span12">
 			<h1><?php echo $detalles_concesionario->nombre_concesionario?></h1>
-			<p><?php echo $detalles_concesionario->direccion?></p>
 			<img src="<?php echo $detalles_concesionario->link_cabecera?>" alt="">
 			<img src="<?php echo $detalles_concesionario->link_logo?>" alt="">
 		</div>
