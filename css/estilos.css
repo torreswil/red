@@ -55,14 +55,21 @@ h2 {
 
 /*Estilos para las vistas agregar_concesionario.php*/
 
-.agregar_concesionario input, textarea{
+.agregar_concesionario input, textarea {
 
 	width: 80%;
 	font-size: 22px;
 	padding: 5px;
+	height: auto;
 
+}
 
+.agregar_concesionario select {
 
+	width: 82%;
+	font-size: 22px;
+	padding: 5px;
+	height: auto;
 
 }
 

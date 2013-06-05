@@ -89,7 +89,7 @@
 					<p class="help-inline"><?php echo form_error('id_departamentos','<div class="label label-important">','</div>'); ?></p>
 					
 					
-					<?php echo form_label('Municipio') ?>
+					<?php echo form_label('Municipio:') ?>
 					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
 					<p class="help-inline"><?php echo form_error('id_municipios','<div class="label label-important">','</div>'); ?></p>	
 									
