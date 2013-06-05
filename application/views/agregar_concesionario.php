@@ -61,9 +61,10 @@
 
 	<div class="container">
 		<p><?php $prueba ?></p>
-		<div class="row">
-			<div class="span10 offset2"><h1>Registro de Nuevo Concesionario</h1></div>
-			<div class="span6 offset2">
+		<div class="row ">
+			<div id="push"></div>
+			<div class="span8 offset2"><h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2></div>
+			<div class="span8 offset2 contenedor agregar_concesionario">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
 	            		<label class="control-label" for="nombre_concesionario">Nombre Comercial<span class="required requerido">*</span></label>                
