@@ -196,12 +196,18 @@
       	</div>
       	<div class="span2">
       		<h2>Siguenos</h2>
+      		<address>
+  			<strong>Red.CO SAS</strong><br>
+  			795 Avenida Cicero, Calle 144<br>
+  			Medell&iacute;n, AN 57094<br>
+  			<abbr title="Tel&eacute;fono">T:</abbr> (094) 456-7890
+			</address>
       	<img src="<?php echo base_url()?>social/fb.png"/><img src="<?php echo base_url()?>social/gp.png"/><img src="<?php echo base_url()?>social/tw.png"/>
       	</div>
 
       	<div id="push"></div>
 
-        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados.</p>
+        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados. <a href="#" title="T&eacute;minos y condiciones de Uso">T&eacute;rminos y Condiciones</a>. <a href="#" title="Pol&iacute;ticas de Privacidad">Po&iacute;ticas de Privacidad</a>. Dise&ntilde;o y Desarrollo: <a href="#">Sergio</a> & <a href="#">Wilfredo</a></p>
       </div>
     </div>
 
