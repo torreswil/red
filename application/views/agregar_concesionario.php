@@ -64,6 +64,7 @@
 		<div class="row ">
 			<div id="push"></div>
 			<div class="span8 offset2"><h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2></div>
+		</hr>
 			<div class="span8 offset2 contenedor agregar_concesionario">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
