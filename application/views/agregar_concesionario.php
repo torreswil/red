@@ -75,7 +75,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="descripcion">Descripcion<span class="required requerido">*</span></label>                
+	            		<label class="control-label" for="descripcion">Descripci&oacute;n<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
 	                        <textarea id="descripcion"  name="descripcion" rows="0" cols="0" class="required"><?php echo set_value('descripcion') ?></textarea>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -93,7 +93,7 @@
 									
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="direccion">Direccion<span class="required requerido">*</span></label>                   
+	            		<label class="control-label" for="direccion">Direcci&oacute;n<span class="required requerido">*</span></label>                   
 	                  	<div class="controls">
 	                        <input type="text" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -102,7 +102,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono1">Telefono1<span class="required requerido">*</span></label>                
+	            		<label class="control-label" for="telefono1">Telefono 1<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
 	                        <input type="text" id='telefono1' name='telefono1' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -111,7 +111,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono2">Telefono2<span class="required requerido">*</span></label>                  
+	            		<label class="control-label" for="telefono2">Telefono 2<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="text" id='telefono2' name='telefono2' value="<?php echo set_value('telefono2') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -141,16 +141,9 @@
 	                           <input type="text" id='web' name='web' value="<?php echo set_value('web') ?>">
 	                           <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
-	                 </div>
-
-<<<<<<< HEAD
-
-	            	<div class="control-group">
-	            		<label class="control-label" for="logo">Logotipo<span class="required">*</span></label>                  
-=======
+	                 </div>    
 	            	<div class="control-group">
 	            		<label class="control-label" for="logo">Logotipo<span class="required requerido">*</span></label>                  
->>>>>>> cambio de look
 	                  	<div class="controls">
 	                        <input type="file" name="logo" id="logo"><br>
 	                        <p class="help-inline"><?php echo form_error('logo','<div class="label label-important">','</div>'); ?></p>
@@ -174,12 +167,47 @@
 				</form>
 			</div>
 		</div>
-	  	<hr>
+	</div>
+		 <div id="push"></div>
+    </div>
 
-		<footer>
-			<p>&copy; Company 2012</p>
-		</footer>
-	</div> <!-- /container -->
+    <div id="footer">
+      <div class="container">
+      	<div class="span3">
+      		<h2>Nosotros</h2>
+      		<p>¿Quienes Somos?</p>
+      		<p>Nuestra Empresa</p>
+      		<p>Prensa</p>
+      		<p>Contacto</p>
+      	</div>
+      	<div class="span3">
+      		<h2>Concesionarias</h2>
+      		<p>Patrocinantes</p>
+      		<p>Ver todas</p>
+      		<p>Agregar Nueva</p>
+      		<p>¿C&oacute;omo?</p>
+      	</div>
+      	<div class="span3">
+      		<h2>Ayuda</h2>
+      		<p>Preguntas Frecuentes</p>
+      		<p>Mapa del Sitio</p>
+      		<p>Chat</p>
+      		<p>Soporte Tecnico</p>
+      	</div>
+      	<div class="span2">
+      		<h2>Siguenos</h2>
+      		<p><img src="<?php echo base_url()?>social/fb.png"/></p>
+      		<p><img src="<?php echo base_url()?>social/gp.png"/></p>
+      		<p><img src="<?php echo base_url()?>social/tw.png"/></p>
+      	</div>
+
+      	<div id="push"></div>
+
+        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados.</p>
+      </div>
+    </div>
+
+      <!-- /container -->
 
 	<!-- Le javascript
 	================================================== -->
