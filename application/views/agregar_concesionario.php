@@ -42,21 +42,17 @@
       </a>
  
       <!-- Nombre del Proyecto -->
-      <a class="brand" href="#"><img src="http://i.imgur.com/opUgXXM.png" title="Red de Concesionarias.com"/></a>
-
-      <ul class="nav">
-  <li><a href="#">Ver Concesionarios</a></li>
-  <li class="divider-vertical"></li>
-  <li><a href="#">Agregar un Concesionario</a></li>
-  <li class="divider-vertical"></li>
-  <li><a href="#">Agregar Auto</a></li>
-  <li class="divider-vertical"></li>
-  <li><a href="#">Busqueda</a></li>
-</ul>
- 
+      <a class="brand" href="#"><img src="http://imgur.com/EYZxp5w.png" title="Red de Concesionarias.com"/></a>
+ 		
       <!-- Aqui va lo que se oculta despues de los 940px-->
       <div class="nav-collapse collapse">
         <!-- .nav, .navbar-search, .navbar-form, etc -->
+  <ul class="nav">
+  <li><a href="#">Ver Concesionarios</a></li>
+  <li><a href="#">Agregar un Concesionario</a></li>
+  <li><a href="#">Agregar Auto</a></li>
+  <li><a href="#">Busqueda</a></li>
+  </ul>
       </div>
  
     </div>
@@ -70,7 +66,7 @@
 			<div class="span6 offset2">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
-	            		<label class="control-label" for="nombre_concesionario">Nombre Comercial<span class="required">*</span></label>                
+	            		<label class="control-label" for="nombre_concesionario">Nombre Comercial<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
 	                        <input type="text" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -79,7 +75,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="descripcion">Descripcion<span class="required">*</span></label>                
+	            		<label class="control-label" for="descripcion">Descripcion<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
 	                        <textarea id="descripcion"  name="descripcion" rows="0" cols="0" class="required"><?php echo set_value('descripcion') ?></textarea>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -97,7 +93,7 @@
 									
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="direccion">Direccion<span class="required">*</span></label>                   
+	            		<label class="control-label" for="direccion">Direccion<span class="required requerido">*</span></label>                   
 	                  	<div class="controls">
 	                        <input type="text" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -106,7 +102,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono1">Telefono1<span class="required">*</span></label>                
+	            		<label class="control-label" for="telefono1">Telefono1<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
 	                        <input type="text" id='telefono1' name='telefono1' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -115,7 +111,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono2">Telefono2<span class="required">*</span></label>                  
+	            		<label class="control-label" for="telefono2">Telefono2<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="text" id='telefono2' name='telefono2' value="<?php echo set_value('telefono2') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -123,7 +119,7 @@
 	                  	</div>
 	            	</div>
 	            	<div class="control-group">
-	            		<label class="control-label" for="contacto">Contacto<span class="required">*</span></label>                  
+	            		<label class="control-label" for="contacto">Contacto<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="text" id='contacto' name='contacto' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -132,7 +128,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="mail">E-mail<span class="required">*</span></label>                  
+	            		<label class="control-label" for="mail">E-mail<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="text" id='mail' name='mail' value="<?php echo set_value('mail') ?>">
 	                        <p class="help-inline"><?php echo form_error('mail','<div class="label label-important">','</div>'); ?></p>
@@ -140,16 +136,21 @@
 	            	</div>
 
 	                 <div class="control-group">
-						<label class="control-label" for="web">Sitio Web<span class="required">*</span></label>                  
+						<label class="control-label" for="web">Sitio Web<span class="required requerido">*</span></label>                  
 	                       <div class="controls">
 	                           <input type="text" id='web' name='web' value="<?php echo set_value('web') ?>">
 	                           <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
 	                 </div>
 
+<<<<<<< HEAD
 
 	            	<div class="control-group">
 	            		<label class="control-label" for="logo">Logotipo<span class="required">*</span></label>                  
+=======
+	            	<div class="control-group">
+	            		<label class="control-label" for="logo">Logotipo<span class="required requerido">*</span></label>                  
+>>>>>>> cambio de look
 	                  	<div class="controls">
 	                        <input type="file" name="logo" id="logo"><br>
 	                        <p class="help-inline"><?php echo form_error('logo','<div class="label label-important">','</div>'); ?></p>
@@ -157,7 +158,7 @@
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="encabezado">Encabezado<span class="required">*</span></label>                  
+	            		<label class="control-label" for="encabezado">Encabezado<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
 	                        <input type="file" name="encabezado" id="encabezado" <br>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
