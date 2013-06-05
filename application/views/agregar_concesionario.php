@@ -198,16 +198,16 @@
       		<h2>Siguenos</h2>
       		<address>
   			<strong>Red.CO SAS</strong><br>
-  			795 Avenida Cicero, Calle 144<br>
-  			Medell&iacute;n, AN 57094<br>
+  			795 Avenida Cicero, Calle 144,Medell&iacute;n, AN 57094<br>
+  			Email: <a href="mailto:info@red.co">info@red.co</a><br>
   			<abbr title="Tel&eacute;fono">T:</abbr> (094) 456-7890
 			</address>
-      	<img src="<?php echo base_url()?>social/fb.png"/><img src="<?php echo base_url()?>social/gp.png"/><img src="<?php echo base_url()?>social/tw.png"/>
+      	<a href="#"><img src="<?php echo base_url()?>social/fb.png"/></a><a href="#"><img src="<?php echo base_url()?>social/gp.png"/></a><a href="#"><img src="<?php echo base_url()?>social/tw.png"/></a>
       	</div>
 
       	<div id="push"></div>
 
-        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados. <a href="#" title="T&eacute;minos y condiciones de Uso">T&eacute;rminos y Condiciones</a>. <a href="#" title="Pol&iacute;ticas de Privacidad">Po&iacute;ticas de Privacidad</a>. Dise&ntilde;o y Desarrollo: <a href="#">Sergio</a> & <a href="#">Wilfredo</a></p>
+        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados. <a href="#" title="T&eacute;minos y condiciones de Uso">T&eacute;rminos</a>. <a href="#" title="Pol&iacute;ticas de Privacidad">Pol&iacute;ticas</a>. Dise&ntilde;o y Desarrollo: <a href="#">Sergio</a> & <a href="#">Wilfredo</a></p>
       </div>
     </div>
 
