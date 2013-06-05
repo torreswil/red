@@ -196,9 +196,7 @@
       	</div>
       	<div class="span2">
       		<h2>Siguenos</h2>
-      		<p><img src="<?php echo base_url()?>social/fb.png"/></p>
-      		<p><img src="<?php echo base_url()?>social/gp.png"/></p>
-      		<p><img src="<?php echo base_url()?>social/tw.png"/></p>
+      	<img src="<?php echo base_url()?>social/fb.png"/><img src="<?php echo base_url()?>social/gp.png"/><img src="<?php echo base_url()?>social/tw.png"/>
       	</div>
 
       	<div id="push"></div>
