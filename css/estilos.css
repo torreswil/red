@@ -66,12 +66,20 @@ h2 {
 
 .agregar_concesionario select {
 
-	width: 82%;
 	font-size: 22px;
 	padding: 5px;
 	height: auto;
 
 }
+
+.agregar_concesionario input[type="file"] {
+
+	font-size: 14px;
+	width: auto;
+	height: auto;
+
+}
+
 
 
 /*Estilos temporales*/

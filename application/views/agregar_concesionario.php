@@ -61,93 +61,88 @@
 
 	<div class="container">
 		<p><?php $prueba ?></p>
-		<div class="row ">
+		<div class="row-fluid">
 			<div id="push"></div>
 			<div class="span8 offset2"><h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2></div>
 		</hr>
 			<div class="span8 offset2 contenedor agregar_concesionario">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
-	            		<label class="control-label" for="nombre_concesionario">Nombre Comercial<span class="required requerido">*</span></label>                
+	            	             
 	                  	<div class="controls">
-	                        <input type="text" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
+	                        <input type="text" placeholder="Nombre Concesionario*" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('nombre_concesionario','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="descripcion">Descripci&oacute;n<span class="required requerido">*</span></label>                
-	                  	<div class="controls">
-	                        <textarea id="descripcion"  name="descripcion" rows="0" cols="0" class="required"><?php echo set_value('descripcion') ?></textarea>
+	            		<div class="controls">
+	                        <textarea id="descripcion" placeholder="Descripci&oacute;n del Concesionario*"  name="descripcion" rows="0" cols="0" class="required"><?php echo set_value('descripcion') ?></textarea>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('descripcion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
+
+	            	<div class="form-inline">
                     <?php echo form_label('Departamento:') ?>
 					<?php echo form_dropdown('id_departamentos',$dptos,set_value('id_departamentos'),"id='sdep'"); ?>
 					<p class="help-inline"><?php echo form_error('id_departamentos','<div class="label label-important">','</div>'); ?></p>
 					
-					
 					<?php echo form_label('Municipio:') ?>
 					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
 					<p class="help-inline"><?php echo form_error('id_municipios','<div class="label label-important">','</div>'); ?></p>	
-									
+					</div>			
+				</br>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="direccion">Direcci&oacute;n<span class="required requerido">*</span></label>                   
 	                  	<div class="controls">
-	                        <input type="text" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
+	                        <input type="text" id='direccion' placeholder="Direcci&oacute;n*" name='direccion' value="<?php echo set_value('direccion') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('direccion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono1">Telefono 1<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
-	                        <input type="text" id='telefono1' name='telefono1' value="<?php echo set_value('telefono1') ?>">
+	                        <input type="text" id='telefono1' placeholder="Tel&eacute;fono*" name='telefono1' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('telefono1','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="telefono2">Telefono 2<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='telefono2' name='telefono2' value="<?php echo set_value('telefono2') ?>">
+	                        <input type="text" id='telefono2' placeholder="Tel&eacute;fono 2" name='telefono2' value="<?php echo set_value('telefono2') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('telefono2','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 	            	<div class="control-group">
-	            		<label class="control-label" for="contacto">Contacto<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='contacto' name='contacto' value="<?php echo set_value('telefono1') ?>">
+	                        <input type="text" id='contacto' placeholder="Persona de Contacto*" name='contacto' value="<?php echo set_value('telefono1') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('contacto','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="mail">E-mail<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='mail' name='mail' value="<?php echo set_value('mail') ?>">
+	                        <input type="text" id='mail' placeholder="Correo Electronico*" name='mail' value="<?php echo set_value('mail') ?>">
 	                        <p class="help-inline"><?php echo form_error('mail','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	                 <div class="control-group">
-						<label class="control-label" for="web">Sitio Web<span class="required requerido">*</span></label>                  
 	                       <div class="controls">
-	                           <input type="text" id='web' name='web' value="<?php echo set_value('web') ?>">
+	                           <input type="text" placeholder="http://" id='web' name='web' value="<?php echo set_value('web') ?>">
 	                           <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
 	                 </div>    
 	            	<div class="control-group">
-	            		<label class="control-label" for="logo">Logotipo<span class="required requerido">*</span></label>                  
+	            	<label class="control-label" for="logo">Logotipo<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="file" name="logo" id="logo"><br>
+	                        <input type="file" value="Seleccionar Imagen"  name="logo" id="logo"><br>
 	                        <p class="help-inline"><?php echo form_error('logo','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
@@ -155,7 +150,7 @@
 	            	<div class="control-group">
 	            		<label class="control-label" for="encabezado">Encabezado<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="file" name="encabezado" id="encabezado" <br>
+	                        <input type="file" name="encabezado" id="encabezado"><br>
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('encabezado','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
@@ -163,7 +158,7 @@
 
 	            	<div class="control-group">
 	                  	<div class="controls">
-	                        <input type="submit" name="submit" value="Enviar">
+	                        <input type="submit" name="submit" class="btn btn-primary btn-large" value="Enviar">
 	                  	</div>
 	            	</div>
 				</form>
@@ -173,6 +168,7 @@
 		 <div id="push"></div>
     </div>
 
+<!-- Esto debe ir en piepagina.php para vincular desde el controlador -->
     <div id="footer">
       <div class="container">
       	<div class="span3">
@@ -209,9 +205,11 @@
 
       	<div id="push"></div>
 
-        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados. <a href="#" title="T&eacute;minos y condiciones de Uso">T&eacute;rminos</a>. <a href="#" title="Pol&iacute;ticas de Privacidad">Pol&iacute;ticas</a>. Dise&ntilde;o y Desarrollo: <a href="#">Sergio</a> & <a href="#">Wilfredo</a></p>
+        <p class="muted credit">&copy; <a href="#">Red.Co SAS</a> Derechos Reservados. <a href="#" title="T&eacute;rminos y Condiciones de Uso">T&eacute;rminos</a>. <a href="#" title="Pol&iacute;ticas de Privacidad">Pol&iacute;ticas</a>. Dise&ntilde;o y Desarrollo: <a href="#">Sergio</a> & <a href="#">Wilfredo</a></p>
       </div>
     </div>
+
+    <!-- /piepagina.php  -->
 
       <!-- /container -->
 
@@ -231,7 +229,6 @@
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-collapse.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-carousel.js"></script>
 	<script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-typeahead.js"></script>
-
 	<script type="text/javascript">
 		var path = '<?php echo base_url()?>';
 		jQuery(document).ready(function(){
