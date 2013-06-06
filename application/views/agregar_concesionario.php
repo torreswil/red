@@ -64,8 +64,8 @@
 		<div class="row-fluid">
 			<div id="push"></div>
 			<div class="span8 offset2"><h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2></div>
-		</hr>
-			<div class="span8 offset2 contenedor agregar_concesionario">
+		<div id="push"></div>
+			<div class="span8 offset2 contenedor agregar_concesionario" text-align="center">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
 	            	             
@@ -155,13 +155,14 @@
 	                        <p class="help-inline"><?php echo form_error('encabezado','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
-
+<hr/>
 	            	<div class="control-group">
 	                  	<div class="controls">
-	                        <input type="submit" name="submit" class="btn btn-primary btn-large" value="Enviar">
+	                        <input type="submit" name="submit" class="btn btn-large btn-primary" value="Registrar Concesionario">
 	                  	</div>
 	            	</div>
 				</form>
+
 			</div>
 		</div>
 	</div>
