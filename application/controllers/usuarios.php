@@ -7,6 +7,12 @@ class Usuarios extends CI_Controller {
 		parent::__construct();
 		//Load Dependencies
 
+		$this->load->library('form_validation');		
+		$this->load->model('usuarios_modelo');
+		$this->load->model('ubigeo');
+		$this->load->helper('url');
+		$this->load->helper('form');
+
 	}
 
 	// List all your items
@@ -58,7 +64,7 @@ class Usuarios extends CI_Controller {
 		}
 		$this->data['titulo']='Agregar un Usuario';	
 		$this->data['dptos']=$this->ubigeo->devolver_departamentos();			   
-		$this->load->view('agregar_usuario', $this->data); 
+		$this->load->view('agregar_usuarios', $this->data); 
 	}
 
 	//Update one item

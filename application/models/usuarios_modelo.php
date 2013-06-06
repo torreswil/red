@@ -1,10 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class ModelName extends CI_Model {
+class usuarios_modelo extends CI_Model {
 	function __construct()
 	{
 		parent::__construct();
+
 		//Do your magic here
+
 	}
 
 	function guardar($datos)

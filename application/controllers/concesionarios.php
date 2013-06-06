@@ -66,7 +66,7 @@ class Concesionarios extends CI_Controller {
 			}
 		}
 		$this->data['titulo']='Agregar un Concesionario';	
-		$this->data['dptos']=$this->ubigeo->devolver_departamentos();			   
+		$this->data['dptos']=$this->ubigeo->devolver_departamentos();	
 		$this->load->view('agregar_concesionario', $this->data); 
 	}
 
@@ -100,7 +100,7 @@ class Concesionarios extends CI_Controller {
 	function cargar_foto($imagen,$id,$tipo)
 	{
 		// configuración para upload
-		$config['upload_path'] = './imagenes/concesionarios/'; // la ruta desde la raíz de CI
+		$config['upload_path'] = './imagenes/usuarios/'; // la ruta desde la raíz de CI
 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = '2048'; // 2 Mb
 		$config['max_width'] = '2048';
@@ -120,7 +120,7 @@ class Concesionarios extends CI_Controller {
 			return null;
 		}
 		else{
-			return base_url().'/imagenes/concesionarios/'.$_FILES['userfile']['name'];
+			return base_url().'/imagenes/usuarios/'.$_FILES['userfile']['name'];
 		} // esto es muy útil para encontrar qué falla
 	}
 
