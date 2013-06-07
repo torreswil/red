@@ -53,11 +53,15 @@ h2 {
 	padding-left: 60px;
 }
 
-.separador {
+#push2 {
 
-	height: 50px;
-	bottom: 50px;
+	width: 100%;
+    clear: both;
+    margin-bottom: 20px;
+    padding:20px;
+
 }
+
 
 /*Estilos para las vistas agregar_concesionario.php*/
 
@@ -122,6 +126,7 @@ h2 {
     width: 100%;
     clear: both;
     padding: 5px;
+
 
 }
 #footer {

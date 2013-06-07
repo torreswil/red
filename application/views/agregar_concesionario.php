@@ -62,8 +62,7 @@
 	<div class="container">
 		<p><?php $prueba ?></p>
 		<div class="row-fluid">
-		<div id="push"></div>
-		<div id="separador"></div>
+		<div id="push2"></div>
 			<div class="span8 offset2 contenedor agregar_concesionario" text-align="center">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
@@ -167,7 +166,7 @@
 	</div>
 		 
     </div>
-<div id="push"></div>
+<div id="push2"></div>
 <!-- Esto debe ir en piepagina.php para vincular desde el controlador -->
     <div id="footer">
       <div class="container">
