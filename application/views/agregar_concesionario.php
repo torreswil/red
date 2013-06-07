@@ -158,17 +158,17 @@
 <hr/>
 	            	<div class="control-group">
 	                  	<div class="controls">
-	                        <input type="submit" name="submit" class="btn btn-large btn-primary" value="Registrar Concesionario">
+	                        <input type="submit" name="submit"  class="btn btn-large btn-primary"  value="Registrar Concesionario"><i class="icon-plus-sign"></i>
 	                  	</div>
 	            	</div>
 				</form>
-
+<div id="push"></div>
 			</div>
 		</div>
 	</div>
-		 <div id="push"></div>
+		 
     </div>
-
+<div id="push"></div>
 <!-- Esto debe ir en piepagina.php para vincular desde el controlador -->
     <div id="footer">
       <div class="container">
