@@ -62,13 +62,12 @@
 	<div class="container">
 		<p><?php $prueba ?></p>
 		<div class="row-fluid">
-			<div id="push"></div>
-			<div class="span8 offset2"><h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2></div>
 		<div id="push"></div>
+		<div id="separador"></div>
 			<div class="span8 offset2 contenedor agregar_concesionario" text-align="center">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
-	            	             
+	            	             <h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2>
 	                  	<div class="controls">
 	                        <input type="text" placeholder="Nombre Concesionario*" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
