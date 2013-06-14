@@ -22,7 +22,7 @@ class Concesionarios extends CI_Controller {
 	// Add a new item
 	public function add()
 	{	
-
+		
 		$this->load->library('form_validation');
 		$this->data['custom_error']='';
 		if ($this->form_validation->run('concesionarios')==false) {

@@ -42,7 +42,7 @@
       </a>
  
       <!-- Nombre del Proyecto -->
-      <!--a class="brand" href="#"><img src="http://imgur.com/EYZxp5w.png" title="Red de Concesionarias.com"/></a-->
+      <a class="brand" href="#"><img src="<?php echo base_url()?>imagenes/logo.png"/></a>
  		
       <!-- Aqui va lo que se oculta despues de los 940px-->
       <div class="nav-collapse collapse">

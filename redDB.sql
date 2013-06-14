@@ -37,11 +37,13 @@ CREATE TABLE IF NOT EXISTS `concesionarios` (
   KEY `id_departamentos` (`id_departamentos`),
   CONSTRAINT `concesionarios_ibfk_1` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`),
   CONSTRAINT `concesionarios_ibfk_2` FOREIGN KEY (`id_departamentos`) REFERENCES `departamentos` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla red_consecionarios.concesionarios: ~1 rows (aproximadamente)
 DELETE FROM `concesionarios`;
 /*!40000 ALTER TABLE `concesionarios` DISABLE KEYS */;
+INSERT INTO `concesionarios` (`id`, `nombre_concesionario`, `descripcion`, `direccion`, `telefono1`, `telefono2`, `contacto`, `mail`, `web`, `id_municipios`, `id_departamentos`, `link_cabecera`, `link_logo`) VALUES
+	(8, 'Concesionario Wiltoco', 'Para vender pichirilos', 'Calle 22a No 23 18', '3144880007', '3144880007', '3144880007', 'wtorresariza@gmail.com', '', 370, 9, 'http://localhost/red//imagenes/concesionarios/encabezado(8).png', 'http://localhost/red//imagenes/concesionarios/logo(8).jpeg');
 /*!40000 ALTER TABLE `concesionarios` ENABLE KEYS */;
 
 
@@ -125,6 +127,41 @@ DELETE FROM `fotos_vehiculos`;
 /*!40000 ALTER TABLE `fotos_vehiculos` ENABLE KEYS */;
 
 
+-- Volcando estructura para tabla red_consecionarios.groups
+DROP TABLE IF EXISTS `groups`;
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla red_consecionarios.groups: ~3 rows (aproximadamente)
+DELETE FROM `groups`;
+/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` (`id`, `name`, `description`) VALUES
+	(1, 'admin', 'Administrador de sitio'),
+	(2, 'admin2', 'Administrador Concesionario'),
+	(3, 'vendedor', 'Empleado de Concesionario');
+/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla red_consecionarios.login_attempts
+DROP TABLE IF EXISTS `login_attempts`;
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varbinary(16) NOT NULL,
+  `login` varchar(100) NOT NULL,
+  `time` int(11) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla red_consecionarios.login_attempts: ~0 rows (aproximadamente)
+DELETE FROM `login_attempts`;
+/*!40000 ALTER TABLE `login_attempts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `login_attempts` ENABLE KEYS */;
+
+
 -- Volcando estructura para tabla red_consecionarios.marca
 DROP TABLE IF EXISTS `marca`;
 CREATE TABLE IF NOT EXISTS `marca` (
@@ -167,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `municipios` (
   CONSTRAINT `municipios_ibfk_1` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla red_consecionarios.municipios: ~834 rows (aproximadamente)
+-- Volcando datos para la tabla red_consecionarios.municipios: ~1.107 rows (aproximadamente)
 DELETE FROM `municipios`;
 /*!40000 ALTER TABLE `municipios` DISABLE KEYS */;
 INSERT INTO `municipios` (`id`, `nombre_municipio`, `departamento`) VALUES
@@ -1276,35 +1313,101 @@ INSERT INTO `municipios` (`id`, `nombre_municipio`, `departamento`) VALUES
 /*!40000 ALTER TABLE `municipios` ENABLE KEYS */;
 
 
--- Volcando estructura para tabla red_consecionarios.usuarios
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nombres` varchar(50) NOT NULL,
-  `apellidos` varchar(50) NOT NULL,
-  `telefono1` varchar(30) NOT NULL,
-  `telefono2` varchar(30) NOT NULL,
+-- Volcando estructura para tabla red_consecionarios.users
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `phone2` varchar(30) NOT NULL,
   `nivel_usuario` int(11) NOT NULL,
   `departamento` int(11) NOT NULL,
   `municipio` int(11) NOT NULL,
   `direccion` varchar(50) NOT NULL,
   `link_avatar` varchar(200) NOT NULL,
   `mail` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL DEFAULT 'NULL',
-  `id_concesionarios` int(11) NOT NULL,
-  PRIMARY KEY (`id_usuario`),
+  `password` varchar(80) NOT NULL DEFAULT 'NULL',
+  `company` int(11) DEFAULT NULL,
+  `ip_address` varbinary(16) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `salt` varchar(40) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) DEFAULT NULL,
+  `last_login` int(11) DEFAULT NULL,
+  `active` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`),
   KEY `departamento` (`departamento`),
   KEY `municipio` (`municipio`),
-  KEY `id_concesionarios` (`id_concesionarios`),
-  CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`),
-  CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`municipio`) REFERENCES `municipios` (`id`),
-  CONSTRAINT `usuarios_ibfk_3` FOREIGN KEY (`id_concesionarios`) REFERENCES `concesionarios` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='todos los usuarios del sistema';
+  KEY `id_concesionarios` (`company`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`departamento`) REFERENCES `departamentos` (`id`),
+  CONSTRAINT `users_ibfk_2` FOREIGN KEY (`municipio`) REFERENCES `municipios` (`id`),
+  CONSTRAINT `users_ibfk_3` FOREIGN KEY (`company`) REFERENCES `concesionarios` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='todos los usuarios del sistema';
 
--- Volcando datos para la tabla red_consecionarios.usuarios: ~0 rows (aproximadamente)
-DELETE FROM `usuarios`;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+-- Volcando datos para la tabla red_consecionarios.users: ~1 rows (aproximadamente)
+DELETE FROM `users`;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `phone`, `phone2`, `nivel_usuario`, `departamento`, `municipio`, `direccion`, `link_avatar`, `mail`, `password`, `company`, `ip_address`, `username`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`) VALUES
+	(1, 'Wilfredo', 'Torres', '5555', '5555', 1, 14, 525, 'calle ', 'ninguno', 'ninguno', '1345', 8, _binary '', 'luistorres', NULL, 'wtorres', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla red_consecionarios.users_groups
+DROP TABLE IF EXISTS `users_groups`;
+CREATE TABLE IF NOT EXISTS `users_groups` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL,
+  `group_id` mediumint(8) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
+  KEY `fk_users_groups_users1_idx` (`user_id`),
+  KEY `fk_users_groups_groups1_idx` (`group_id`),
+  CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `FK_users_groups_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla red_consecionarios.users_groups: ~1 rows (aproximadamente)
+DELETE FROM `users_groups`;
+/*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
+INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
+	(1, 1, 1);
+/*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla red_consecionarios.users_old
+DROP TABLE IF EXISTS `users_old`;
+CREATE TABLE IF NOT EXISTS `users_old` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `ip_address` varbinary(16) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(80) NOT NULL,
+  `salt` varchar(40) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `activation_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_code` varchar(40) DEFAULT NULL,
+  `forgotten_password_time` int(11) unsigned DEFAULT NULL,
+  `remember_code` varchar(40) DEFAULT NULL,
+  `created_on` int(11) unsigned NOT NULL,
+  `last_login` int(11) unsigned DEFAULT NULL,
+  `active` tinyint(1) unsigned DEFAULT NULL,
+  `first_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) DEFAULT NULL,
+  `company` varchar(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla red_consecionarios.users_old: ~1 rows (aproximadamente)
+DELETE FROM `users_old`;
+/*!40000 ALTER TABLE `users_old` DISABLE KEYS */;
+INSERT INTO `users_old` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
+	(1, _binary 0x7F000001, 'administrator', '59beecdf7fc966e2f17fd8f65a4a9aeb09d4a3d4', '9462e8eee0', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1370618891, 1, 'Admin', 'istrator', 'ADMIN', '0');
+/*!40000 ALTER TABLE `users_old` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla red_consecionarios.vehiculos
@@ -1319,7 +1422,7 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   `id_concesionarios` int(11) DEFAULT NULL,
   `id_departamentos` int(11) DEFAULT NULL,
   `id_municipios` int(11) DEFAULT NULL,
-  `id_usuario_usuarios` int(11) DEFAULT NULL,
+  `id_usuario` int(11) unsigned DEFAULT NULL,
   `color` varchar(50) NOT NULL,
   `transmision` varchar(30) NOT NULL,
   `asientos` varchar(40) DEFAULT NULL,
@@ -1332,13 +1435,13 @@ CREATE TABLE IF NOT EXISTS `vehiculos` (
   KEY `id_concesionarios` (`id_concesionarios`),
   KEY `id_departamentos` (`id_departamentos`),
   KEY `id_municipios` (`id_municipios`),
-  KEY `id_usuario_usuarios` (`id_usuario_usuarios`),
+  KEY `id_usuario_usuarios` (`id_usuario`),
+  CONSTRAINT `FK_vehiculos_users` FOREIGN KEY (`id_usuario`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   CONSTRAINT `vehiculos_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id`),
   CONSTRAINT `vehiculos_ibfk_2` FOREIGN KEY (`id_modelo`) REFERENCES `modelo` (`id`),
   CONSTRAINT `vehiculos_ibfk_3` FOREIGN KEY (`id_concesionarios`) REFERENCES `concesionarios` (`id`),
   CONSTRAINT `vehiculos_ibfk_4` FOREIGN KEY (`id_departamentos`) REFERENCES `departamentos` (`id`),
-  CONSTRAINT `vehiculos_ibfk_5` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`),
-  CONSTRAINT `vehiculos_ibfk_6` FOREIGN KEY (`id_usuario_usuarios`) REFERENCES `usuarios` (`id_usuario`)
+  CONSTRAINT `vehiculos_ibfk_5` FOREIGN KEY (`id_municipios`) REFERENCES `municipios` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla red_consecionarios.vehiculos: ~0 rows (aproximadamente)
