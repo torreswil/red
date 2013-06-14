@@ -12,6 +12,7 @@ class Usuarios extends CI_Controller {
 		$this->load->model('ubigeo');
 		$this->load->helper('url');
 		$this->load->helper('form');
+		$this->load->library('ion_auth');
 
 	}
 
@@ -61,7 +62,27 @@ class Usuarios extends CI_Controller {
 				$this->data['custom_error'] = '<div class="form_error"><p>A ocurrido un error.</p></div>';
 
 			}
-		}
+		};
+
+		if ($this->ion_auth->in_group(1))
+		{
+			$niveles[1]='Administrador del sitio';
+			$niveles[2]='Administrador de Concesionario';
+			$niveles[3]='Vendedor';
+			$this->data['niveles']=$niveles;
+
+		};
+
+		if ($this->ion_auth->in_group(2))
+		{
+			$niveles[2]='Administrador de Concesionario';
+			$niveles[3]='Vendedor';
+			$this->data['niveles']=$niveles;
+
+		};
+		$niveles[2]='Administrador de Concesionario';
+			$niveles[3]='Vendedor';
+			$this->data['niveles']=$niveles;
 		$this->data['titulo']='Agregar un Usuario';	
 		$this->data['dptos']=$this->ubigeo->devolver_departamentos();			   
 		$this->load->view('agregar_usuarios', $this->data); 
