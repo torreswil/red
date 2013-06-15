@@ -1,28 +1,44 @@
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
+<?php $this->load->view('header')?>
 
-<div id="infoMessage"><?php echo $message;?></div>
+  <div class="container">
+    <div class="row ">
+      <div id="push"></div>
+      <div class="span8 offset2"><h2>Iniciar Sesion</h2></div>
+    </hr>
+      <div class="span8 offset2 contenedor agregar_concesionario">
 
-<?php echo form_open("auth/login");?>
-
-  <p>
-    <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_password_label', 'password');?>
-    <?php echo form_input($password);?>
-  </p>
-
-  <p>
-    <?php echo lang('login_remember_label', 'remember');?>
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
-  </p>
+         <form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
+            <div class="control-group">
+                <label class="control-label" for="identity">Email/usuario:<span class="required requerido">*</span></label>                
+                <div class="controls">
+                    <input type="text" id='identity' name='identity' value="<?php echo set_value('identity') ?>">
+                </div>
+            </div>
 
 
-  <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+            <div class="control-group">
+                <label class="control-label" for="password">Password:<span class="required requerido">*</span></label>                
+                <div class="controls">
+                    <input type="password" id='password' name='password' value="<?php echo set_value('password') ?>">
+                </div>
+            </div>
 
-<?php echo form_close();?>
+            <div class="control-group">
+                <label class="control-label" for="remember">Recordar:</label>                
+                <div class="controls">
+                    <input type="checkbox" name="remember" value="1" id="remember">
+                </div>
+            </div>
 
-<p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+            <div class="control-group">
+                      <div class="controls">
+                          <input type="submit" name="submit" value="Entrar">
+                      </div>
+                </div>
+        </form>
+      </div>
+    </div>
+  </div>
+     <div id="push"></div>
+    </div>
+<?php $this->load->view('footer'); ?>
