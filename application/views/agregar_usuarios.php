@@ -2,57 +2,54 @@
 
 	<div class="container">
 		<p><?php $prueba ?></p>
-		<div class="row ">
-			<div id="push"></div>
-			<div class="span8 offset2"><h2>REGISTRO DE USUARIOS</h2></div>
-		</hr>
-			<div class="span8 offset2 contenedor agregar_concesionario">
+		<div class="row-fluid">
+		<div id="push2"></div>
+			<div class="span8 offset2 contenedor agregar_concesionario" text-align="center">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
-	            		<label class="control-label" for="first_name">Nombre<span class="required requerido">*</span></label>                
+						<h2>AGREGAR UN NUEVO USUARIO</h2>
 	                  	<div class="controls">
-	                        <input type="text" id='first_name' name='first_name' value="<?php echo set_value('first_name') ?>">
+	                        <input type="text" placeholder="Nombres*" id='first_name' name='first_name' value="<?php echo set_value('first_name') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('first_name','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="last_name">Descripci&oacute;n<span class="required requerido">*</span></label>                
-	                  	<div class="controls">
-	                        <textarea id="last_name"  name="last_name" rows="0" cols="0" class="required"><?php echo set_value('last_name') ?></textarea>
+	            	        <div class="controls">
+	                        <input id="last_name" placeholder="Apellidos*"  name="last_name" class="required"><?php echo set_value('last_name') ?></input>
 	                        <p class="help-inline"><?php echo form_error('last_name','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
                     <div class="control-group">
-	            		<label class="control-label" for="phone">Telefono 1<span class="required requerido">*</span></label>                
 	                  	<div class="controls">
-	                        <input type="text" id='phone' name='phone' value="<?php echo set_value('phone') ?>">
+	                        <input type="text" id='phone' placeholder="Tel&eacute;fono*" name='phone' value="<?php echo set_value('phone') ?>">
 	                        <p class="help-inline"><?php echo form_error('phone','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="phone2">Telefono 2<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='phone2' name='phone2' value="<?php echo set_value('phone2') ?>">
+	                        <input type="text" id='phone2' placeholder="Tel&eacute;fono2" name='phone2' value="<?php echo set_value('phone2') ?>">
 	                        <p class="help-inline"><?php echo form_error('phone2','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
-
+	            	<div class="form-inline solo">
 	            	<?php echo form_label('Tipo de Usuario:') ?>
 					<?php echo form_dropdown('nivel_usuario',$niveles,set_value('nivel_usuario'),"id='niveles'"); ?>
 					<p class="help-inline"><?php echo form_error('nivel_usuario','<div class="label label-important">','</div>'); ?></p>
-					
+					</div>
+				</br>
+					<div class="form-inline">
 	            	<?php echo form_label('Departamento:') ?>
 					<?php echo form_dropdown('id_departamentos',$dptos,set_value('id_departamentos'),"id='sdep'"); ?>
 					<p class="help-inline"><?php echo form_error('id_departamentos','<div class="label label-important">','</div>'); ?></p>
-					
-					
+
 					<?php echo form_label('Municipio:') ?>
 					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
 					<p class="help-inline"><?php echo form_error('id_municipios','<div class="label label-important">','</div>'); ?></p>	
-									
+					</div>
+				</br>			
 
 	            	<div class="control-group">
 	            		<label class="control-label" for="direccion">Direcci&oacute;n<span class="required requerido">*</span></label>                   
@@ -88,13 +85,14 @@
 	                           <p class="help-inline"><?php echo form_error('password','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
 	                 </div>
-
+<hr/>
 	            	<div class="control-group">
 	                  	<div class="controls">
-	                        <input type="submit" name="submit" value="Enviar">
+	                        <input type="submit" name="submit"  class="btn btn-large btn-primary"  value="Registrar Usuario"/>
 	                  	</div>
 	            	</div>
 				</form>
+				<div id="push"></div>
 			</div>
 		</div>
 	</div>

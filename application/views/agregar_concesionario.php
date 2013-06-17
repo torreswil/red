@@ -7,7 +7,7 @@
 			<div class="span8 offset2 contenedor agregar_concesionario" text-align="center">
 				<form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
 					<div class="control-group">
-	            	             <h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2>
+	            	 <h2>REGISTRO DE UN NUEVO CONCESIONARIO</h2>
 	                  	<div class="controls">
 	                        <input type="text" placeholder="Nombre Concesionario*" id='nombre_concesionario' name='nombre_concesionario' value="<?php echo set_value('nombre_concesionario') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
@@ -27,12 +27,13 @@
                     <?php echo form_label('Departamento:') ?>
 					<?php echo form_dropdown('id_departamentos',$dptos,set_value('id_departamentos'),"id='sdep'"); ?>
 					<p class="help-inline"><?php echo form_error('id_departamentos','<div class="label label-important">','</div>'); ?></p>
-					
+					<span id="derecha">
 					<?php echo form_label('Municipio:') ?>
 					<?php echo form_dropdown('id_municipios',array(), set_value('id_municipios'),"id='smun'"); ?>
 					<p class="help-inline"><?php echo form_error('id_municipios','<div class="label label-important">','</div>'); ?></p>	
+					</span>
 					</div>			
-				</br>
+					</br>
 
 	            	<div class="control-group">
 	                  	<div class="controls">
@@ -74,7 +75,7 @@
 
 	                 <div class="control-group">
 	                       <div class="controls">
-	                           <input type="text" placeholder="http://" id='web' name='web' value="<?php echo set_value('web') ?>">
+	                           <input type="text" placeholder="Sitio Web Concesionario" id='web' name='web' value="<?php echo set_value('web') ?>">
 	                           <p class="help-inline"><?php echo form_error('web','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
 	                 </div>    
@@ -97,7 +98,7 @@
 <hr/>
 	            	<div class="control-group">
 	                  	<div class="controls">
-	                        <input type="submit" name="submit"  class="btn btn-large btn-primary"  value="Registrar Concesionario"><i class="icon-plus-sign"></i>
+	                        <input type="submit" name="submit"  class="btn btn-large btn-primary"  value="Registrar Concesionario"/>
 	                  	</div>
 	            	</div>
 				</form>
@@ -108,5 +109,4 @@
 		 
     </div>
 <div id="push2"></div>
-<!-- Esto debe ir en piepagina.php para vincular desde el controlador -->
 <?php $this->load->view('footer'); ?>

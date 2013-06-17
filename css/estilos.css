@@ -109,6 +109,18 @@ h2 {
 	
 }
 
+.solo select{
+
+	width: 77%;
+
+}
+
+#derecha {
+
+	float: right;
+	margin-right: 7%;
+}
+
 .container1 .credit {
         margin: 20px 0;
       }
