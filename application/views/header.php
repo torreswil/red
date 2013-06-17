@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $titulo ?></title>
+	<title><?php echo $titulo ?> | Red de Concesionarios</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -34,27 +34,20 @@
   <div class="navbar-inner">
     <div class="container">
  
-      <!-- .btn-navbar es usado para el formato responsive, cuando el boton se pone a la izquierda -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
- 
       <!-- Nombre del Proyecto -->
       <a class="brand" href="#"><img src="<?php echo base_url()?>imagenes/logo.png"/></a>
  		
       <!-- Aqui va lo que se oculta despues de los 940px-->
-      <div class="nav-collapse collapse">
-        <!-- .nav, .navbar-search, .navbar-form, etc -->
   <ul class="nav">
   <li><a href="#">Ver Concesionarios</a></li>
   <li><a href="#">Agregar un Concesionario</a></li>
   <li><a href="#">Agregar Auto</a></li>
   <li><a href="#">Busqueda</a></li>
   </ul>
+     <div class="nav-collapse collapse">
       </div>
- 
+  <!-- .nav, .navbar-search, .navbar-form, etc -->
     </div>
   </div>
 </div>
+<!-- /fin del header.php -->
