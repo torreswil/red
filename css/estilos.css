@@ -63,7 +63,7 @@ h2 {
 }
 
 
-/*Estilos para las vistas agregar_concesionario.php*/
+/*Estilos para las vistas*/
 
 .agregar_concesionario input, textarea {
 
@@ -113,6 +113,10 @@ h2 {
 
 	width: 77%;
 
+}
+
+.casillas {
+	
 }
 
 #derecha {

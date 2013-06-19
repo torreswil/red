@@ -52,9 +52,8 @@
 				</br>			
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="direccion">Direcci&oacute;n<span class="required requerido">*</span></label>                   
 	                  	<div class="controls">
-	                        <input type="text" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
+	                        <input type="text" placeholder="Direcci&oacute;n*" id='direccion' name='direccion' value="<?php echo set_value('direccion') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('direccion','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
@@ -62,26 +61,23 @@
 
 	            	
 	            	<div class="control-group">
-	            		<label class="control-label" for="link_avatar">Contacto<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='link_avatar' name='link_avatar' value="<?php echo set_value('link_avatar') ?>">
+	                        <input type="text" placeholder="Contacto*" id='link_avatar' name='link_avatar' value="<?php echo set_value('link_avatar') ?>">
 	                        <!--input class="input-xlarge"  id="tipo_id" type="text" name="tipo_id" value="<?php echo set_value('tipo_id'); ?>"  /-->
 	                        <p class="help-inline"><?php echo form_error('link_avatar','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	            	<div class="control-group">
-	            		<label class="control-label" for="mail">E-mail<span class="required requerido">*</span></label>                  
 	                  	<div class="controls">
-	                        <input type="text" id='mail' name='mail' value="<?php echo set_value('mail') ?>">
+	                        <input type="text" id='mail' placeholder="Correo Electronico*" name='mail' value="<?php echo set_value('mail') ?>">
 	                        <p class="help-inline"><?php echo form_error('mail','<div class="label label-important">','</div>'); ?></p>
 	                  	</div>
 	            	</div>
 
 	                 <div class="control-group">
-						<label class="control-label" for="password">Contrase&ntilde;a<span class="required requerido">*</span></label>                  
 	                       <div class="controls">
-	                           <input type="text" id='password' name='password' value="<?php echo set_value('password') ?>">
+	                           <input type="password" id='password' placeholder="Contrase&ntilde;a*" name='password' value="<?php echo set_value('password') ?>">
 	                           <p class="help-inline"><?php echo form_error('password','<div class="label label-important">','</div>'); ?></p>
 	                       </div>
 	                 </div>
@@ -92,10 +88,11 @@
 	                  	</div>
 	            	</div>
 				</form>
-				<div id="push"></div>
+<div id="push"></div>
 			</div>
 		</div>
 	</div>
-		 <div id="push"></div>
+		 
     </div>
+<div id="push2"></div>
 <?php $this->load->view('footer'); ?>
