@@ -65,13 +65,14 @@ class Auth extends CI_Controller {
 			//check to see if the user is logging in
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
-
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
 				//if the login is successful
+				
 				//redirect them back to the home page
 				if ($this->ion_auth->in_group('admin')){
-					//Cargar Menu para Administrador.
+					redirect('/concesionarios/add', 'refresh');
+					echo 'atenticado';
 				}
 
 				elseif ($this->ion_auth->in_group('admin2')) {
@@ -107,7 +108,6 @@ class Auth extends CI_Controller {
 				'id' => 'password',
 				'type' => 'password',
 			);
-
 			$this->_render_page('auth/login', $this->data);
 		}
 	}

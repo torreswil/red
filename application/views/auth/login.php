@@ -5,7 +5,7 @@
     <div id="push2"></div>
       <div class="span8 offset2 contenedor agregar_concesionario">
 
-         <form method="post" action="<?php current_url() ?>" enctype="multipart/form-data">
+         <form method="post" action="<?php current_url() ?>" enctype="">
             <div class="control-group">
                 <div class="controls">
                   <h2>INICIAR SESION</h2>
